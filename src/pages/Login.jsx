@@ -1,14 +1,57 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../supabase";
 
 export default function Login() {
   const [isSignup, setIsSignup] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    // TEMP: simulate successful login/signup
-    navigate("/dashboard");
+
+    if (isSignup) {
+      // SIGN UP
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            full_name: fullName, // stored in user metadata
+          },
+        },
+      });
+
+      if (error) {
+        alert(error.message);
+        return;
+      }
+
+      alert("Signup successful! Please login.");
+      setIsSignup(false);
+    } else {
+      // LOGIN
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        alert(error.message);
+        return;
+      }
+
+      // Save username (use metadata full_name if exists)
+      const username =
+        data.user.user_metadata.full_name || data.user.email;
+
+      localStorage.setItem("username", username);
+
+      navigate("/dashboard");
+    }
   }
 
   return (
@@ -20,11 +63,33 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} style={styles.form}>
           {isSignup && (
-            <input type="text" placeholder="Full Name" style={styles.input} />
+            <input
+              type="text"
+              placeholder="Full Name"
+              style={styles.input}
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+            />
           )}
 
-          <input type="email" placeholder="Email" style={styles.input} />
-          <input type="password" placeholder="Password" style={styles.input} />
+          <input
+            type="email"
+            placeholder="Email"
+            style={styles.input}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            style={styles.input}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
           <button type="submit" style={styles.button}>
             {isSignup ? "Sign Up" : "Login"}
@@ -51,7 +116,7 @@ const styles = {
     background: "linear-gradient(135deg, #2B1A4A, #FFE1D6)",
   },
   card: {
-    width: "420px",                 // LARGE BOX
+    width: "420px",
     padding: "40px",
     borderRadius: "24px",
     background: "rgba(255, 255, 255, 0.92)",

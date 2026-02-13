@@ -1,38 +1,41 @@
 export default function Dashboard() {
+  const username = localStorage.getItem("username");
   return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h2 style={styles.logo}>VisionNest</h2>
-      </header>
+    <><div>
+      <h1>Hey {localStorage.getItem("username")} 👋</h1>
+    </div><div style={styles.container}>
+        <header style={styles.header}>
+          <h2 style={styles.logo}>VisionNest</h2>
+        </header>
 
-      <main style={styles.main}>
-        <div style={styles.card}>
-          <h3 style={styles.sectionTitle}>Your Visions</h3>
+        <main style={styles.main}>
+          <div style={styles.card}>
+            <h3 style={styles.sectionTitle}>Your Visions</h3>
 
-          <table style={styles.table}>
-            <thead>
-              <tr>
-                <th>Vision</th>
-                <th>Tracks</th>
-                <th>Progress</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Get Fit</td>
-                <td>Workout, Diet</td>
-                <td>40%</td>
-              </tr>
-              <tr>
-                <td>Learn Coding</td>
-                <td>React, DSA</td>
-                <td>20%</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </main>
-    </div>
+            <table style={styles.table}>
+              <thead>
+                <tr>
+                  <th>Vision</th>
+                  <th>Tracks</th>
+                  <th>Progress</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Get Fit</td>
+                  <td>Workout, Diet</td>
+                  <td>40%</td>
+                </tr>
+                <tr>
+                  <td>Learn Coding</td>
+                  <td>React, DSA</td>
+                  <td>20%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div></>
   );
 }
 
