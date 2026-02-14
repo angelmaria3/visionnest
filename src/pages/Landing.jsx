@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/Visionnest.png";
+import logo from "../assets/VisionNest.png";
 
 export default function Landing() {
   const [showCTA, setShowCTA] = useState(false);
