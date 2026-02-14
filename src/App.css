@@ -40,3 +40,36 @@
 .read-the-docs {
   color: #888;
 }
+
+.upload-section {
+  margin-top: 10px;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: #4b2c6f;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-btn:hover {
+  opacity: 0.9;
+}
+
+.image-grid {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.image-grid img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
