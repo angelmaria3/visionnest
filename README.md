@@ -94,39 +94,13 @@ Vision Detail & Task Management - Detailed view of a selected vision showing tas
 
 **System Architecture:**
 
-flowchart LR
-    A[User Browser] -->|HTTP Requests| B[React Frontend]
-
-    B -->|Supabase JS SDK| C[Supabase Auth]
-    B -->|Database Queries| D[Supabase PostgreSQL]
-    B -->|File Upload / Fetch| E[Supabase Storage]
-
-    C --> D
-    D --> E
-
-    E -->|Public URLs| B
-
+![sysarch](https://github.com/user-attachments/assets/1f395e2b-38e9-469c-964e-06a4b79abcec)
 
 VisionNest follows a client–backend architecture where the React frontend communicates directly with Supabase using the Supabase JavaScript SDK. Supabase handles Authentication, PostgreSQL database operations (visions & tasks), and Storage for uploaded task images. Row Level Security (RLS) ensures each user can only access their own data. The frontend manages UI rendering, state updates, and optimistic UI interactions while Supabase manages persistence and security.
 
 **Application Workflow:**
 
-flowchart TD
-    A[User Login / Signup] --> B[Dashboard]
-
-    B --> C[Create Vision]
-    C --> D[Add Tasks to Vision]
-
-    D --> E[Mark Task Complete]
-    E --> F[Progress Bar Updates]
-
-    E --> G[Upload Proof Image]
-    G --> H[Image Stored in Supabase Storage]
-
-    H --> I[View Images in Modal / Fullscreen]
-
-    D --> J[Add / Delete Tasks]
-
+![applworkflow](https://github.com/user-attachments/assets/2bb05df8-0fb3-4711-84c4-d9c948c735ba)
 
 - User Authentication
 The user logs in securely using Supabase Authentication. All data is scoped to the authenticated user using Row Level Security (RLS).
@@ -412,7 +386,7 @@ No additional server setup required for production (unless using custom AI backe
 
 ### 🎥 Video
 
-🔗 Demo Video Link: 
+🔗 Demo Video Link: https://drive.google.com/file/d/1mMT63gb6zjW5gGPHdE-E_ic96rrY5Thc/view?usp=sharing
 
 **What the demo showcases:**
 
