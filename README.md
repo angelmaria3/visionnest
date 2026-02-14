@@ -70,35 +70,45 @@ npm run dev
 
 ### For Software:
 
-#### Screenshots (Add at least 3)
+#### Screenshots 
 
 <img width="1919" height="1199" alt="Screenshot 2026-02-14 075549" src="https://github.com/user-attachments/assets/d6eb85d5-c068-4c7a-8b99-c3c0e15d94c8" />
+
 
 
 Landing Page - The landing page of VisionNest introduces the platform with a calming gradient background and motivational tagline, encouraging users to start tracking their goals. The “Get Started” button guides users to authentication.
 
 
+
 <img width="1919" height="1199" alt="Screenshot 2026-02-14 075605" src="https://github.com/user-attachments/assets/580e0a98-c52d-482d-9d16-c2e57be43ed0" />
+
 
 
 Login Page - Secure login interface powered by Supabase Authentication. Users can enter their email and password to access their personalized vision dashboard or navigate to account creation if they are new.
 
 
+
 <img width="1919" height="1199" alt="Screenshot 2026-02-14 075619" src="https://github.com/user-attachments/assets/94565460-37a4-42c1-af77-a66af4b7e6fb" />
+
 
 
 Vision Dashboard - The main dashboard displaying all created visions (e.g., Travel, Art, Daily Workout). Users can add new visions or open existing ones to manage tasks and track progress.
 
 
+
 <img width="1919" height="1199" alt="Screenshot 2026-02-14 075636" src="https://github.com/user-attachments/assets/05837b74-4e2e-40fd-985a-574240b1b266" />
+
 
 
 Add New Vision - A modal interface for creating a new vision. Users can enter a vision title and a short description, which gets stored securely in the database and linked to their account.
 
+
 <img width="1919" height="1198" alt="Screenshot 2026-02-14 075721" src="https://github.com/user-attachments/assets/120d86a8-5bda-452a-9ec9-ad401130d95f" />
 
 
+
 Vision Detail & Task Management - Detailed view of a selected vision showing task breakdown, dynamic progress tracking, task completion toggles, and milestone image uploads. Completed tasks allow proof image uploads stored securely in Supabase Storage.
+
 
 #### Diagrams
 
